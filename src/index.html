@@ -10,6 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Falando de GTI">
+    <meta name="mobile-web-app-capable" content="yes">
     <link rel="manifest" href="./manifest.json">
 
     <!-- Meta tags para SEO e compartilhamento -->
@@ -44,6 +45,7 @@
 
     <title>Falando de GTI - Paixão por Carros Esportivos</title>
     <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/mobile-fix.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -590,12 +592,36 @@
                 navigator.serviceWorker.register('./sw.js')
                     .then((registration) => {
                         console.log('SW registrado com sucesso: ', registration);
+
+                        // Verificar se já está instalado
+                        window.addEventListener('beforeinstallprompt', (e) => {
+                            e.preventDefault();
+                            console.log('PWA pode ser instalado');
+
+                            // Mostrar prompt de instalação após 3 segundos
+                            setTimeout(() => {
+                                e.prompt();
+                                e.userChoice.then((choiceResult) => {
+                                    if (choiceResult.outcome === 'accepted') {
+                                        console.log('Usuario aceitou instalar o PWA');
+                                    }
+                                });
+                            }, 3000);
+                        });
                     })
                     .catch((registrationError) => {
                         console.log('Falha ao registrar SW: ', registrationError);
                     });
             });
         }
+
+        // Detectar se foi aberto como PWA
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.matchMedia('(display-mode: standalone)').matches) {
+                console.log('Executando como PWA');
+                document.body.classList.add('pwa-mode');
+            }
+        });
     </script>
 </body>
 

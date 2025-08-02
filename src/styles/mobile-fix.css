@@ -1,0 +1,50 @@
+/* Correções para Mobile - Posicionamento dos ícones sociais */
+@media (max-width: 768px) {
+    .header .container {
+        position: relative;
+        padding: 0 15px;
+    }
+    
+    .header .social-links {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: auto;
+        z-index: 10;
+    }
+    
+    .header .social-links a {
+        margin-left: 8px;
+        font-size: 18px;
+    }
+    
+    .header .logo {
+        max-width: calc(100% - 120px);
+        margin-right: auto;
+    }
+    
+    .header .logo img {
+        max-height: 40px;
+        width: auto;
+    }
+    
+    .header .menu-toggle {
+        display: none;
+    }
+    
+    .header .nav-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .social-links a {
+        margin-left: 6px;
+        font-size: 16px;
+    }
+    
+    .header .logo {
+        max-width: calc(100% - 100px);
+    }
+}
