@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#ff0000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Falando de GTI">
+    <link rel="manifest" href="./manifest.json">
+
     <!-- Meta tags para SEO e compartilhamento -->
     <meta name="description"
         content="O melhor conteúdo sobre Golf GTI e outros esportivos da Volkswagen. Reviews, modificações, encontros e muito mais!">
@@ -18,7 +25,7 @@
     <meta property="og:description"
         content="O melhor conteúdo sobre Golf GTI e outros esportivos da Volkswagen. Reviews, modificações, encontros e muito mais!">
     <meta property="og:image"
-        content="https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/favicon/favicon.jpeg">
+        content="https://github.com/yurivfernandes/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -27,11 +34,13 @@
     <meta property="twitter:description"
         content="O melhor conteúdo sobre Golf GTI e outros esportivos da Volkswagen. Reviews, modificações, encontros e muito mais!">
     <meta property="twitter:image"
-        content="https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/logo.png">
+        content="https://github.com/yurivfernandes/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png"
-        href="https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/favicon/favicon.jpeg">
+        href="https://github.com/yurivfernandes/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true">
+    <!-- PWA Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/yurivfernandes/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true">
 
     <title>Falando de GTI - Paixão por Carros Esportivos</title>
     <link rel="stylesheet" href="./styles/main.css">
@@ -65,6 +74,8 @@
                         class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/falandodegti" target="_blank" aria-label="Facebook"><i
                         class="fab fa-facebook"></i></a>
+                <a href="https://app.falandodegti.com.br" target="_blank" aria-label="App Peças MK3"><i
+                        class="fas fa-mobile-alt"></i></a>
             </div>
             <button class="menu-toggle" aria-label="Menu">
                 <span></span>
@@ -540,6 +551,7 @@
                         <li><a href="#galeria"><i class="fas fa-images"></i> Galeria GTI</a></li>
                         <li><a href="#curiosidades"><i class="fas fa-info-circle"></i> Curiosidades</a></li>
                         <li><a href="#documentos"><i class="fas fa-file-alt"></i> Documentação</a></li>
+                        <li><a href="https://app.falandodegti.com.br" target="_blank"><i class="fas fa-mobile-alt"></i> App Peças MK3</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
@@ -551,6 +563,8 @@
                                 class="fab fa-instagram"></i></a>
                         <a href="https://www.facebook.com/falandodegti" target="_blank" aria-label="Facebook"><i
                                 class="fab fa-facebook"></i></a>
+                        <a href="https://app.falandodegti.com.br" target="_blank" aria-label="App Peças MK3"><i
+                                class="fas fa-mobile-alt"></i></a>
                     </div>
                 </div>
                 <div class="footer-contact">
@@ -569,6 +583,20 @@
 
     <script type="module" src="./scripts/config.js"></script>
     <script type="module" src="./scripts/main.js"></script>
+    <script>
+        // Registrar Service Worker para PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((registration) => {
+                        console.log('SW registrado com sucesso: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('Falha ao registrar SW: ', registrationError);
+                    });
+            });
+        }
+    </script>
 </body>
 
 </html>
