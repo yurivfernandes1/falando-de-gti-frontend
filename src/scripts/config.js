@@ -50,18 +50,18 @@ const CONFIG = {
     
     // Caminhos das imagens
     images: {
-        hero: "https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/hero.jpg",
-        presenter: "https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/retrato/sobre.jpeg",
+        hero: "https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/hero.jpg",
+        presenter: "https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/retrato/sobre.jpeg",
         gallery: [
-            "https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide1.jpg",
-            "https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide2.jpg",
-            "https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide3.jpg",
-            "https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide4.jpg",
-            "https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide5.jpg",
-            "https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide7.jpeg",
-            "https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide8.jpg",
-            "https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide9.jpg",
-            "https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide10.jpeg"
+            "https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide1.jpg",
+            "https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide2.jpg",
+            "https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide3.jpg",
+            "https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide4.jpg",
+            "https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide5.jpg",
+            "https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide7.jpeg",
+            "https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide8.jpg",
+            "https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide9.jpg",
+            "https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/slide10.jpeg"
         ],
         instagram: "public/instagram-post.jpg"
     }

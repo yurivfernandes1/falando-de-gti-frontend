@@ -425,7 +425,7 @@ main, section:first-of-type {
 .hero {
     min-height: 100vh;
     width: 100%;
-    background: url('https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/hero.jpg');
+    background: url('https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/hero.jpg');
     background-size: cover;
     background-position: center 30%;
     background-repeat: no-repeat;
@@ -437,7 +437,7 @@ main, section:first-of-type {
 @media (max-width: 768px) {
     .hero {
         min-height: 80vh;
-        background: url('https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/retrato/sobre.jpeg');
+        background: url('https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/retrato/sobre.jpeg');
         background-size: cover;
         background-position: center 70%;
         background-attachment: scroll;

@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const presenterImage = document.getElementById('presenterImage');
     if (presenterImage) {
         presenterImage.src = window.innerWidth <= 768 ? 
-            'https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/hero.jpg' : 
-            'https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/retrato/sobre.jpeg';
+            'https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/hero.jpg' : 
+            'https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/retrato/sobre.jpeg';
 
         window.addEventListener('resize', () => {
             presenterImage.src = window.innerWidth <= 768 ? 
-                'https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/hero.jpg' : 
-                'https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/retrato/sobre.jpeg';
+                'https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/hero.jpg' : 
+                'https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/retrato/sobre.jpeg';
         });
     }
 });
@@ -322,8 +322,8 @@ function initHeroImage() {
     const heroSection = document.querySelector('.hero');
     if (heroSection) {
         const heroImage = window.innerWidth <= 768 ? 
-            'https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/retrato/sobre.jpeg' : 
-            'https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/hero.jpg';
+            'https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/retrato/sobre.jpeg' : 
+            'https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/hero.jpg';
             
         heroSection.style.background = `linear-gradient(rgba(18, 18, 18, 0.5), rgba(18, 18, 18, 0.6)), url('${heroImage}')`;
         heroSection.style.backgroundSize = 'cover';

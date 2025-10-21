@@ -75,8 +75,8 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('push', (event) => {
     const options = {
         body: event.data ? event.data.text() : 'Novo conteúdo disponível!',
-        icon: 'https://github.com/yurivfernandes/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true',
-        badge: 'https://github.com/yurivfernandes/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true',
+        icon: 'https://github.com/yurivfernandes1/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true',
+        badge: 'https://github.com/yurivfernandes1/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true',
         vibrate: [100, 50, 100],
         data: {
             dateOfArrival: Date.now(),
@@ -86,12 +86,12 @@ self.addEventListener('push', (event) => {
             {
                 action: 'explore',
                 title: 'Ver mais',
-                icon: 'https://github.com/yurivfernandes/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true'
+                icon: 'https://github.com/yurivfernandes1/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true'
             },
             {
                 action: 'close',
                 title: 'Fechar',
-                icon: 'https://github.com/yurivfernandes/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true'
+                icon: 'https://github.com/yurivfernandes1/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true'
             }
         ]
     };

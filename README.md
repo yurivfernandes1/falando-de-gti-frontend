@@ -1,7 +1,7 @@
 # 🏎️ Falando de GTI - Landing Page
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/yurivfernandes/falando-de-gti-frontend/refs/heads/main/src/public/galeria/logo.png" alt="Falando de GTI Logo" width="300px">
+  <img src="https://raw.githubusercontent.com/yurivfernandes1/falando-de-gti-frontend/refs/heads/main/src/public/galeria/logo.png" alt="Falando de GTI Logo" width="300px">
 
   [![YouTube Channel](https://img.shields.io/badge/YouTube-Falando%20de%20GTI-red)](https://www.youtube.com/falandodegti)
   [![Instagram](https://img.shields.io/badge/Instagram-%40falandodegti-purple)](https://www.instagram.com/falandodegti)
