@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    
+
     <!-- Meta tags para SEO -->
     <meta name="description" content="Links oficiais do Novo Uno Clube - Comunidade de apaixonados pelo Fiat Uno">
     <meta name="keywords" content="Novo Uno Clube, Fiat Uno, links, redes sociais">
-    
+
     <!-- Open Graph -->
     <meta property="og:title" content="Novo Uno Clube - Links">
     <meta property="og:description" content="Acesse todos os nossos links e redes sociais">
@@ -23,9 +23,7 @@
 <body style="opacity: 0">
     <div class="container">
         <div class="profile">
-            <img id="profile-img"
-                src="/galeria/novo uno clube.JPG"
-                alt="Novo Uno Clube Logo">
+            <img id="profile-img" src="/galeria/novo uno clube.JPG" alt="Novo Uno Clube Logo">
             <h1>Novo Uno Clube</h1>
             <h2>Comunidade de Apaixonados pelo Fiat Uno</h2>
             <p>Acesse nossos links oficiais</p>
@@ -36,8 +34,7 @@
                 <i class="fab fa-instagram"></i>
                 <span>Instagram</span>
             </a>
-            <a href="https://www.facebook.com/novounoclube" class="link-item" target="_blank"
-                rel="noopener noreferrer">
+            <a href="https://www.facebook.com/novounoclube" class="link-item" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-facebook"></i>
                 <span>Facebook</span>
             </a>
@@ -55,10 +52,12 @@
                 <a href="https://wa.me/5531987798823" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://github.com/yurifernandes1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a href="https://github.com/yurifernandes1" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/yurianalistabi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/yurianalistabi" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <a href="https://yurivf.com.br" target="_blank" rel="noopener noreferrer" aria-label="Site">
@@ -84,29 +83,29 @@
                 duration: 0.3,
                 ease: 'power2.out'
             })
-            // Animar foto do perfil
-            .to('.profile img', {
-                scale: 1,
-                opacity: 1,
-                duration: 0.5,
-                ease: 'back.out(1.7)'
-            })
-            // Animar textos do perfil
-            .to('.profile h1, .profile h2, .profile p', {
-                y: 0,
-                opacity: 1,
-                duration: 0.4,
-                stagger: 0.15,
-                ease: 'power2.out'
-            })
-            // Animar links
-            .to('.links a', {
-                y: 0,
-                opacity: 1,
-                duration: 0.4,
-                stagger: 0.1,
-                ease: 'power2.out'
-            });
+                // Animar foto do perfil
+                .to('.profile img', {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: 'back.out(1.7)'
+                })
+                // Animar textos do perfil
+                .to('.profile h1, .profile h2, .profile p', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    stagger: 0.15,
+                    ease: 'power2.out'
+                })
+                // Animar links
+                .to('.links a', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    stagger: 0.1,
+                    ease: 'power2.out'
+                });
         });
     </script>
 </body>
