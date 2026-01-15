@@ -4,51 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Falando de GTI - Links</title>
-    <link rel="icon" type="image/png"
-        href="https://github.com/yurivfernandes1/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true">
+    <title>Novo Uno Clube - Links</title>
+    <link rel="icon" type="image/png" href="/galeria/novo uno clube.JPG">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
+    
     <!-- Meta tags para SEO -->
-    <meta name="description"
-        content="Links oficiais do Falando de GTI - Canal sobre Golf GTI e carros esportivos da Volkswagen">
-    <meta name="keywords" content="Falando de GTI, Golf GTI, Volkswagen, links, redes sociais">
-
+    <meta name="description" content="Links oficiais do Novo Uno Clube - Comunidade de apaixonados pelo Fiat Uno">
+    <meta name="keywords" content="Novo Uno Clube, Fiat Uno, links, redes sociais">
+    
     <!-- Open Graph -->
-    <meta property="og:title" content="Falando de GTI - Links">
+    <meta property="og:title" content="Novo Uno Clube - Links">
     <meta property="og:description" content="Acesse todos os nossos links e redes sociais">
-    <meta property="og:image"
-        content="https://github.com/yurivfernandes1/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true">
+    <meta property="og:image" content="/galeria/novo uno clube.JPG">
 </head>
 
 <body style="opacity: 0">
     <div class="container">
         <div class="profile">
             <img id="profile-img"
-                src="https://github.com/yurivfernandes1/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true"
-                alt="Falando de GTI Logo">
-            <h1>Falando de GTI</h1>
-            <h2>Paixão por Carros Esportivos</h2>
+                src="/galeria/novo uno clube.JPG"
+                alt="Novo Uno Clube Logo">
+            <h1>Novo Uno Clube</h1>
+            <h2>Comunidade de Apaixonados pelo Fiat Uno</h2>
             <p>Acesse nossos links oficiais</p>
         </div>
         <div class="links">
-            <a href="https://app.falandodegti.com.br" class="link-item" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-mobile-alt"></i>
-                <span>App Peças Compatíveis MK3</span>
-            </a>
-            <a href="https://www.youtube.com/falandodegti?sub_confirmation=1" class="link-item" target="_blank"
-                rel="noopener noreferrer">
-                <i class="fab fa-youtube"></i>
-                <span>Canal no YouTube</span>
-            </a>
-            <a href="https://www.instagram.com/falandodegti" class="link-item" target="_blank"
+            <a href="https://www.instagram.com/novounoclube" class="link-item" target="_blank"
                 rel="noopener noreferrer">
                 <i class="fab fa-instagram"></i>
                 <span>Instagram</span>
             </a>
-            <a href="https://www.facebook.com/falandodegti" class="link-item" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/novounoclube" class="link-item" target="_blank"
+                rel="noopener noreferrer">
                 <i class="fab fa-facebook"></i>
                 <span>Facebook</span>
             </a>
@@ -80,7 +69,6 @@
     </footer>
 
     <script>
-        // Configurar animações assim que a página carregar
         document.addEventListener('DOMContentLoaded', () => {
             // Configurar elementos para começarem invisíveis
             gsap.set('.profile img', { scale: 0.8, opacity: 0 });
@@ -90,35 +78,35 @@
             // Timeline para controlar a sequência de animações
             const tl = gsap.timeline();
 
-            // Mostrar o body mais rapidamente
+            // Mostrar o body
             tl.to('body', {
                 opacity: 1,
-                duration: 0.2, // Reduzido de 0.4 para 0.2
+                duration: 0.3,
                 ease: 'power2.out'
             })
-                // Animar foto do perfil mais rapidamente
-                .to('.profile img', {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.5, // Reduzido de 0.8 para 0.5
-                    ease: 'power2.out'
-                })
-                // Animar textos do perfil com menor delay entre elementos
-                .to('.profile h1, .profile h2, .profile p', {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.4, // Reduzido de 0.8 para 0.4
-                    stagger: 0.1, // Reduzido de 0.2 para 0.1
-                    ease: 'power2.out'
-                })
-                // Animar links mais rapidamente
-                .to('.links a', {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.3, // Reduzido de 0.6 para 0.3
-                    stagger: 0.1, // Reduzido de 0.2 para 0.1
-                    ease: 'power2.out'
-                });
+            // Animar foto do perfil
+            .to('.profile img', {
+                scale: 1,
+                opacity: 1,
+                duration: 0.5,
+                ease: 'back.out(1.7)'
+            })
+            // Animar textos do perfil
+            .to('.profile h1, .profile h2, .profile p', {
+                y: 0,
+                opacity: 1,
+                duration: 0.4,
+                stagger: 0.15,
+                ease: 'power2.out'
+            })
+            // Animar links
+            .to('.links a', {
+                y: 0,
+                opacity: 1,
+                duration: 0.4,
+                stagger: 0.1,
+                ease: 'power2.out'
+            });
         });
     </script>
 </body>
