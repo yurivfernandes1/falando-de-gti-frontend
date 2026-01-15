@@ -264,6 +264,43 @@
                 grid-template-columns: repeat(4, 1fr);
             }
         }
+
+        .footer {
+            margin-top: 50px;
+            padding: 30px 20px;
+            border-top: 2px solid rgba(255, 0, 0, 0.2);
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .footer-content strong {
+            color: var(--primary-color);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
     </style>
 </head>
 
@@ -439,6 +476,28 @@
             Voltar para Links
         </a>
     </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Desenvolvido por <strong>Yuri Viana Fernandes</strong></p>
+            <div class="footer-links">
+                <a href="https://wa.me/5531987798823" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://github.com/yurifernandes1" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/yurianalistabi" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://yurivf.com.br" target="_blank" rel="noopener noreferrer" aria-label="Site">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {

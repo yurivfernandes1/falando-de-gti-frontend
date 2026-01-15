@@ -6,7 +6,7 @@ const data = {
     profile: {
         image: "https://github.com/yurivfernandes1/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true",
         name: "Falando de GTI",
-        title: "Paixão por Carros Esportivos",
+        title: "O melhor conteúdo sobre Golf GTI e outros esportivos da Volkswagen",
         subtitle: "Acesse nossos links oficiais"
     },
     links: [
