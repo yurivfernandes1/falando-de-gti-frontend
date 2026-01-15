@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falando de GTI - Links Shopee</title>
+    <link rel="icon" type="image/png"
+        href="https://github.com/yurivfernandes1/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Produtos recomendados pelo Falando de GTI na Shopee">
+    <meta name="keywords" content="Falando de GTI, Shopee, peças automotivas, Golf GTI, produtos recomendados">
+
+    <style>
+        :root {
+            --primary-color: #ff0000;
+            --secondary-color: #cc0000;
+            --shopee-orange: #ee4d2d;
+            --text-color: #ffffff;
+            --bg-dark: #0a0a0a;
+            --bg-darker: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-dark);
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(238, 77, 45, 0.1) 0%, transparent 50%);
+            color: var(--text-color);
+            min-height: 100vh;
+            padding: 20px;
+            margin: 0;
+            opacity: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            margin: 0 auto 20px;
+            box-shadow:
+                0 0 20px rgba(255, 0, 0, 0.3),
+                0 0 40px rgba(255, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .header .shopee-badge {
+            display: inline-block;
+            background: var(--shopee-orange);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .disclaimer {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+            border: 2px solid rgba(255, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .disclaimer i {
+            font-size: 24px;
+            color: var(--shopee-orange);
+            margin-bottom: 10px;
+        }
+
+        .disclaimer p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, var(--bg-darker) 0%, rgba(255, 0, 0, 0.05) 100%);
+            border: 2px solid rgba(255, 0, 0, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--shopee-orange);
+            box-shadow:
+                0 8px 25px rgba(238, 77, 45, 0.3),
+                0 0 40px rgba(255, 0, 0, 0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background: #1a1a1a;
+        }
+
+        .product-info {
+            padding: 16px;
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-color);
+            min-height: 48px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-link {
+            display: block;
+            background: linear-gradient(135deg, var(--shopee-orange) 0%, #d73211 100%);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .product-link:hover::before {
+            left: 100%;
+        }
+
+        .product-link:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(238, 77, 45, 0.5);
+        }
+
+        .product-link i {
+            margin-left: 8px;
+        }
+
+        .back-button {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border: 2px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 16px 24px;
+            text-decoration: none;
+            color: var(--text-color);
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px auto 0;
+            max-width: 300px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #990000 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .product-image {
+                height: 180px;
+            }
+
+            .product-info {
+                padding: 12px;
+            }
+
+            .product-title {
+                font-size: 14px;
+                min-height: 40px;
+            }
+
+            .product-link {
+                font-size: 13px;
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .disclaimer {
+                padding: 15px;
+            }
+
+            .disclaimer p {
+                font-size: 13px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .products-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://github.com/yurivfernandes1/app-pecas-compativeis/blob/main/logo/Perfil%201.png?raw=true"
+                alt="Falando de GTI Logo" class="logo">
+            <h1>Produtos Recomendados</h1>
+            <span class="shopee-badge">
+                <i class="fas fa-shopping-bag"></i> Shopee
+            </span>
+        </div>
+
+        <div class="disclaimer">
+            <i class="fas fa-info-circle"></i>
+            <p>
+                <strong>Atenção:</strong> Os produtos abaixo são recomendações pessoais baseadas na minha experiência.
+                Não sou vendedor nem afiliado destes produtos. As compras são realizadas diretamente na Shopee.
+                Sempre verifique as avaliações e especificações antes de comprar.
+            </p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Air Intake -->
+            <div class="product-card">
+                <img src="../public/links%20shopee/Airintake.png" alt="Air Intake" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Air Intake</h3>
+                    <a href="https://s.shopee.com.br/10wVp8PjDF" class="product-link" target="_blank"
+                        rel="noopener noreferrer">
+                        Ver na Shopee <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Faróis -->
+            <div class="product-card">
+                <img src="../public/links%20shopee/Par%20de%20farol%20golf%20alemao.png" alt="Faróis Foco Duplo"
+                    class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Faróis Foco Duplo Golf Alemão</h3>
+                    <a href="https://s.shopee.com.br/2qOA4i6XOj" class="product-link" target="_blank"
+                        rel="noopener noreferrer">
+                        Ver na Shopee <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Spoiler VR6 -->
+            <div class="product-card">
+                <img src="../public/links%20shopee/spoiler%20golf%20vr6.png" alt="Spoiler Golf VR6"
+                    class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Spoiler Dianteiro Golf VR6</h3>
+                    <a href="https://s.shopee.com.br/8zylTK0mCA" class="product-link" target="_blank"
+                        rel="noopener noreferrer">
+                        Ver na Shopee <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Spoiler MK3 Alemão -->
+            <div class="product-card">
+                <img src="../public/links%20shopee/spoiler%20golf%20mk3%20alem%C3%A3o.png" alt="Spoiler Golf MK3 Alemão"
+                    class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Spoiler Golf MK3 Alemão</h3>
+                    <a href="https://shopee.com.br/Spoiler-Parachoque-Dianteiro-Golf-Alem%C3%A3o-1995-1996-1997-1998-Fino-i.1351718600.58250133306?auto_part_query=spoiler+golf+mk3&extraParams=%7B%22display_model_id%22%3A219181367507%2C%22model_selection_logic%22%3A3%7D&sp_atk=8ae5357a-6aea-4c1e-90c5-fad44dee67e3&xptdk=8ae5357a-6aea-4c1e-90c5-fad44dee67e3"
+                        class="product-link" target="_blank" rel="noopener noreferrer">
+                        Ver na Shopee <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Manopla -->
+            <div class="product-card">
+                <img src="../public/links%20shopee/Manopla%20golf%2020th.png" alt="Manopla Golf 20th"
+                    class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Manopla Golf 20th</h3>
+                    <a href="https://s.shopee.com.br/4q96SyTPcr" class="product-link" target="_blank"
+                        rel="noopener noreferrer">
+                        Ver na Shopee <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Red Bull -->
+            <div class="product-card">
+                <img src="../public/links%20shopee/redbuul%20gp%20japao.png" alt="Miniatura Red Bull GP Japão"
+                    class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Miniatura Red Bull GP Japão 2025</h3>
+                    <a href="https://shopee.com.br/Bburago-1-43-2025-Redbull-RB21-F1-F%C3%B3rmula-Carro-Ve%C3%ADculos-Fundidos-Modelo-Colecion%C3%A1vel-Brinquedos-De-Corrida-Caixa-Acr%C3%AD-i.341586600.55301146508?extraParams=%7B%22display_model_id%22%3A340103275198%2C%22model_selection_logic%22%3A3%7D&sp_atk=e4dd583e-eda2-45da-9734-6df80588c0a6&xptdk=e4dd583e-eda2-45da-9734-6df80588c0a6"
+                        class="product-link" target="_blank" rel="noopener noreferrer">
+                        Ver na Shopee <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- McLaren Monaco -->
+            <div class="product-card">
+                <img src="../public/links%20shopee/mclaren%20gp%20monaco.png" alt="Miniatura McLaren GP Mônaco"
+                    class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Miniatura McLaren GP Mônaco 2025 Senna</h3>
+                    <a href="https://s.shopee.com.br/3Vdscf8kKs" class="product-link" target="_blank"
+                        rel="noopener noreferrer">
+                        Ver na Shopee <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Lego McLaren -->
+            <div class="product-card">
+                <img src="../public/links%20shopee/Lego%20Mclaren%20senna.png" alt="Lego McLaren Senna"
+                    class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Lego McLaren Senna</h3>
+                    <a href="https://s.shopee.com.br/6KxuFggVs6" class="product-link" target="_blank"
+                        rel="noopener noreferrer">
+                        Ver na Shopee <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Limpador Delete -->
+            <div class="product-card">
+                <img src="/links shopee/Limpador delete.png" alt="Limpador Delete Golf MK3" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Limpador Delete Golf MK3</h3>
+                    <a href="https://shopee.com.br/Limpador-Delete-Vw-Golf-MK3-i.430010026.23098380696?auto_part_query=golf+mk3&extraParams=%7B%22display_model_id%22%3A189606068534%2C%22model_selection_logic%22%3A3%7D&sp_atk=b5a8e3a4-ec4a-4ee7-a973-3fd185f7cb7f&xptdk=b5a8e3a4-ec4a-4ee7-a973-3fd185f7cb7f"
+                        class="product-link" target="_blank" rel="noopener noreferrer">
+                        Ver na Shopee <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mola Esportiva -->
+            <div class="product-card">
+                <img src="/links shopee/Mola esportiva.png" alt="Mola Esportiva Redcoil Golf MK3" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Mola Esportiva Redcoil Golf MK3</h3>
+                    <a href="https://shopee.com.br/Vw-Golf-Mk3-(MEXICANO)-1994-a-99-Kit-Mola-Esportiva-RC-905-i.1358189381.21099895699?auto_part_query=golf+mk3&extraParams=%7B%22display_model_id%22%3A109725749774%2C%22model_selection_logic%22%3A3%7D&sp_atk=9d58f674-ffbb-42aa-bd3f-3741d7533161&xptdk=9d58f674-ffbb-42aa-bd3f-3741d7533161"
+                        class="product-link" target="_blank" rel="noopener noreferrer">
+                        Ver na Shopee <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Borracha Churrasqueira -->
+            <div class="product-card">
+                <img src="../public/links%20shopee/Borracha%20Churrasqueira.png" alt="Borracha Churrasqueira Golf MK3"
+                    class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Borracha Churrasqueira Golf MK3</h3>
+                    <a href="https://shopee.com.br/Borracha-Friso-Acabamento-da-Churrasqueira-Golf-Mk3-Gti-Todos-os-Anos-i.1321562453.22293253838?auto_part_query=golf+mk3&extraParams=%7B%22display_model_id%22%3A228771548797%2C%22model_selection_logic%22%3A3%7D&sp_atk=d82440fa-c9d5-429d-920d-c43ce9aa5f77&xptdk=d82440fa-c9d5-429d-920d-c43ce9aa5f77"
+                        class="product-link" target="_blank" rel="noopener noreferrer">
+                        Ver na Shopee <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Emblema Golf GTI -->
+            <div class="product-card">
+                <img src="../public/links%20shopee/Emblema%20golf%20gti%20euro.png" alt="Emblema Golf GTI Euro"
+                    class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Emblema Golf GTI Euro</h3>
+                    <a href="https://shopee.com.br/Emblema-cromado-Golf-GTI-traseiro-do-Golf-MK3-Euro-i.1418628695.22093663857?auto_part_query=golf+mk3&extraParams=%7B%22display_model_id%22%3A199602740549%2C%22model_selection_logic%22%3A3%7D&sp_atk=e695bcf0-d3dc-4adf-90b4-a96b4c31b902&xptdk=e695bcf0-d3dc-4adf-90b4-a96b4c31b902"
+                        class="product-link" target="_blank" rel="noopener noreferrer">
+                        Ver na Shopee <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <a href="./index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Voltar para Links
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Configurar elementos para começarem invisíveis
+            gsap.set('.header .logo', { scale: 0.8, opacity: 0 });
+            gsap.set('.header h1, .header .shopee-badge', { y: 20, opacity: 0 });
+            gsap.set('.disclaimer', { y: 20, opacity: 0 });
+            gsap.set('.product-card', { y: 30, opacity: 0 });
+            gsap.set('.back-button', { y: 20, opacity: 0 });
+
+            // Timeline para controlar a sequência de animações
+            const tl = gsap.timeline();
+
+            // Mostrar o body
+            tl.to('body', {
+                opacity: 1,
+                duration: 0.3,
+                ease: 'power2.out'
+            })
+                // Animar logo
+                .to('.header .logo', {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: 'back.out(1.7)'
+                })
+                // Animar textos do header
+                .to('.header h1, .header .shopee-badge', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    stagger: 0.1,
+                    ease: 'power2.out'
+                })
+                // Animar disclaimer
+                .to('.disclaimer', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                })
+                // Animar produtos
+                .to('.product-card', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    stagger: 0.08,
+                    ease: 'power2.out'
+                })
+                // Animar botão voltar
+                .to('.back-button', {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    ease: 'power2.out'
+                });
+        });
+    </script>
+</body>
+
+</html>
